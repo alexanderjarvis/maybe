@@ -1,0 +1,12 @@
+[ignore]
+
+[include]
+
+[libs]
+flow/lib
+
+[options]
+suppress_type=$FlowFixMe
+
+[version]
+^0.39.0
