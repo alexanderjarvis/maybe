@@ -1,5 +1,5 @@
 {
-  "name": "maybe",
+  "name": "maybes",
   "version": "0.0.0",
   "description": "Maybe",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "lint": "eslint .",
     "test": "jest"
   },
-  "author": "Alex Jarvis",
+  "author": "Alexander Jarvis",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.23.1",
