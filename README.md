@@ -1,4 +1,4 @@
-# Maybe
+# Maybe [![Build Status](https://travis-ci.org/alexanderjarvis/maybe.svg?branch=master)](https://travis-ci.org/alexanderjarvis/maybe) [![npm version](https://badge.fury.io/js/maybes.svg)](https://badge.fury.io/js/maybes)
 
 Maybe is a type that wraps optional values. It can either be a `Just` (has some value) or a `Nothing`
 (has no value).
