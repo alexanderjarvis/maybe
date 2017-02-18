@@ -87,3 +87,21 @@ test('just() throws on empty values', () => {
   const fUndefined = () => just(undefined)
   expect(fUndefined).toThrow()
 })
+
+test('filter() to return just', () => {
+  const name = maybe('alex  ')
+  const upper = name
+    .map(v => v.trim())
+    .filter(v => v.length != 0)
+    .map(v => v.toUpperCase())
+  expect(upper).toEqual(just('ALEX'))
+})
+
+test('filter() to return nothing', () => {
+  const name = maybe('  ')
+  const upper = name
+    .map(v => v.trim())
+    .filter(v => v.length != 0)
+    .map(v => v.toUpperCase())
+  expect(upper).toBe(nothing)
+})

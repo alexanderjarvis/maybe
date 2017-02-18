@@ -12,6 +12,14 @@ class Just<A> {
     this.value = value
   }
 
+  filter(p: (A) => boolean): Maybe<A> {
+    if (p(this.value)) {
+      return this
+    } else {
+      return nothing
+    }
+  }
+
   flatMap<B>(f: (A) => Maybe<B>): Maybe<B> {
     return f(this.value)
   }
@@ -39,6 +47,10 @@ class Just<A> {
 }
 
 class Nothing {
+
+  filter(p: Function): Nothing {
+    return this
+  }
 
   flatMap(f: Function): Nothing {
     return this
