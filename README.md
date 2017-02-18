@@ -134,7 +134,7 @@ Without Maybe
 
 (Safe version in case value is falsy, e.g. `0`)
 ```js
-(value !== null || value !== undefined ) ? transform(value) : null
+(value != null) ? transform(value) : null
 ```
 
 With Maybe (handles falsy values like `0` and `''` automatically).

@@ -1,7 +1,12 @@
+/**
+ * @flow
+ */
+
 import { maybe, just, nothing } from './maybe'
+import type { Maybe } from './maybe'
 
 test('valid values', () => {
-  const x = maybe(1)
+  const x: Maybe<*> = maybe(1)
   expect(x.isJust()).toBe(true)
   expect(x.isNothing()).toBe(false)
   const y = maybe(0)
@@ -72,4 +77,13 @@ test('flatMap', () => {
     }
   })
   expect(result).toEqual(just('world'))
+})
+
+test('just() throws on empty values', () => {
+  // $FlowIgnore
+  const fNull = () => just(null)
+  expect(fNull).toThrow()
+  // $FlowIgnore
+  const fUndefined = () => just(undefined)
+  expect(fUndefined).toThrow()
 })

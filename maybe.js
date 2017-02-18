@@ -2,7 +2,7 @@
  * @flow
  */
 
-type Maybe<A> = Just<A> | Nothing
+export type Maybe<A> = Just<A> | Nothing
 
 class Just<A> {
 
@@ -66,16 +66,21 @@ class Nothing {
 
 }
 
-function isNull<T>(value: ?T): boolean {
-  return value === undefined || value === null
+function isNil<T>(value: ?T): boolean {
+  return value == null
 }
 
-export function just<T>(value: $NonMaybeType<T>): Maybe<T> {
+type AnyVal = number | boolean | string | Object
+
+export function just<T>(value: AnyVal): Maybe<T> {
+  if (isNil(value)) {
+    throw Error('Cannot create Just with an empty value: use flowtype!')
+  }
   return new Just(value)
 }
 
 export const nothing = Object.freeze(new Nothing())
 
 export function maybe<T>(value: ?T): Maybe<T> {
-  return isNull(value) ? nothing : new Just(value)
+  return isNil(value) ? nothing : new Just(value)
 }

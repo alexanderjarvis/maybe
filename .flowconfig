@@ -3,10 +3,13 @@
 [include]
 
 [libs]
-flow/lib
+flow-typed/
 
 [options]
 suppress_type=$FlowFixMe
+suppress_type=$FlowIgnore
+suppress_comment= \\(.\\|\n\\)*\\$FlowFixMe
+suppress_comment= \\(.\\|\n\\)*\\$FlowIgnore
 
 [version]
 ^0.39.0
