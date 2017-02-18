@@ -1,6 +1,6 @@
 {
   "name": "maybes",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Maybe is a type that wraps optional values",
   "keywords": [
     "maybe",
