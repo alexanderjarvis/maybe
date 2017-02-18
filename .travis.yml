@@ -1,4 +1,12 @@
 language: node_js
 node_js:
-  - "6"
-  - "7"
+- '6'
+- '7'
+deploy:
+  provider: npm
+  email: alex@panaxiom.co.uk
+  api_key:
+    secure: eVME1daw/zy3Z7cyvz7mJZxWZonWu8jwaWkXgb0u2ouRl6gtW59VUoUfnNj9jBYKBowWLOgEij8/8DXg/59WGpukL0l8KzZzv+Q0reUrZz48grTz+QeHVzvJ0Y0uVZAAJ0tTeVcVVq6+0tKYWhgesR2wMS6x7vUTGdrNlNH6xgnCHGxwpDnG8NdA2uoKdF4eDyW43vS/n5042KVz8I05xSpng1rUBP8i7EepI0hmYl5Tqhji4TtGCs55rP+TYoRvnQhjOA6S+BdVRXpxLLUTNf04BhA+vm08QSl5ZgQW/l0MlUSZl39bobSo6HTS7wSFl7xZyoYivVQ0SXepmNxtq+vNfiGHQlqiAJjCtWQ8yKoqKOX3Yb9w1LzxYmhaiZCLQZxN6X7haPEuYY7GfPHKgLHaADIpFHgCGxTUA5ozAODcBQL2O0/0a3LNqfxLOFoYGVVAItZeH5cTmE/8KC+ERhcIxF4ebZ3rfM+F9/Fzs/RvVuxbHi/Blbq1nQtEMeZC2LHoJyBZmL0RhilwT5FRVKVq9oG3JC3SULVLxt23Lv4/fi3PZ//S38P+pL8z3gPzCCKwK2nW02raahnjgRRdNWVbBx8R6mlbrYWchCovrH42zISddA5uhVUJquvbq3E4u5BTHu9I01kNy8bCjbB7l9lRf1G8cSKpWdKUuQ2kX4U=
+  on:
+    tags: true
+    repo: alexanderjarvis/maybe

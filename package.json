@@ -1,7 +1,7 @@
 {
   "name": "maybes",
   "version": "0.1.0",
-  "description": "Maybe",
+  "description": "Maybe is a type that wraps optional values",
   "main": "index.js",
   "scripts": {
     "flow": "flow",
