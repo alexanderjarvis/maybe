@@ -1,8 +1,16 @@
 {
   "name": "maybes",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Maybe is a type that wraps optional values",
-  "keywords": ["maybe", "optional", "option", "just", "nothing", "some", "none"],
+  "keywords": [
+    "maybe",
+    "optional",
+    "option",
+    "just",
+    "nothing",
+    "some",
+    "none"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/alexanderjarvis/maybe.git"
