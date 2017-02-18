@@ -13,6 +13,20 @@ together, often leading to much cleaner code.
 It's inspired by Haskell's [Maybe](https://wiki.haskell.org/Maybe), Swift's [Optional](https://developer.apple.com/reference/swift/optional) and
 Scala's [Option](http://www.scala-lang.org/api/current/scala/Option.html).
 
+## Installation
+
+Using yarn
+
+```
+$ yarn add maybes
+```
+
+or npm
+
+```
+$ npm install maybes
+```
+
 ## Usage
 
 Import the library:
