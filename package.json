@@ -2,14 +2,19 @@
   "name": "maybes",
   "version": "0.1.1",
   "description": "Maybe is a type that wraps optional values",
+  "keywords": ["maybe", "optional", "option", "just", "nothing", "some", "none"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexanderjarvis/maybe.git"
+  },
+  "author": "Alexander Jarvis",
+  "license": "MIT",
   "main": "index.js",
   "scripts": {
     "flow": "flow",
     "lint": "eslint .",
     "test": "jest"
   },
-  "author": "Alexander Jarvis",
-  "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.23.1",
     "babel-eslint": "^7.1.1",
