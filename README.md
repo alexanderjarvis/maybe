@@ -106,9 +106,9 @@ const result = a.flatMap(v => {
 
 `just` is a function like `maybe` that takes a value. `nothing` is a reference to `Nothing`.
 
-However using `filter` is usually the best way to return a `Nothing` given a predicate. It returns
+Using `filter` is usually the best way to return a `Nothing` given a predicate. It returns
 `Just` only if there is a value and applying the predicate function to the `Maybe`'s value returns
-true.
+`true`.
 
 ```js
 const name = maybe('  ')
@@ -121,7 +121,7 @@ const upper = name
 ## Types
 
 This library uses [Flowtype](https://flowtype.org) so you can also import the `Maybe` type and use
-it's definition:
+its definition:
 
 ```js
 import { maybe } from 'maybes'
