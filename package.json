@@ -17,13 +17,16 @@
   },
   "author": "Alexander Jarvis",
   "license": "MIT",
-  "main": "index.js",
+  "main": "lib/maybe.js",
   "scripts": {
     "flow": "flow",
     "lint": "eslint .",
-    "test": "jest"
+    "test": "jest",
+    "compile": "babel src --out-dir lib --ignore src/maybe.test.js",
+    "prepublish": "yarn run compile"
   },
   "devDependencies": {
+    "babel-cli": "^6.23.0",
     "babel-core": "^6.23.1",
     "babel-eslint": "^7.1.1",
     "babel-jest": "^18.0.0",
