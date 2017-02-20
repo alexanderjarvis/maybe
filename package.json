@@ -22,7 +22,7 @@
     "flow": "flow",
     "lint": "eslint .",
     "test": "jest",
-    "compile": "babel src --out-dir lib --ignore src/maybe.test.js",
+    "compile": "babel src --out-dir lib --ignore src/maybe.test.js && cp src/maybe.js lib/maybe.flow.js",
     "prepublish": "yarn run compile"
   },
   "devDependencies": {
