@@ -3,6 +3,8 @@
  */
 
 export type Maybe<A> = Just<A> | Nothing
+  
+type AnyVal = number | boolean | string | Object
 
 class Just<A> {
 
@@ -20,11 +22,11 @@ class Just<A> {
     }
   }
 
-  flatMap<B>(f: (A) => Maybe<B>): Maybe<B> {
+  flatMap<B: AnyVal>(f: (A) => Maybe<B>): Maybe<B> {
     return f(this.value)
   }
 
-  map<B>(f: (A) => B): Maybe<B> {
+  map<B: AnyVal>(f: (A) => B): Maybe<B> {
     return new Just(f(this.value))
   }
 
@@ -52,11 +54,11 @@ class Nothing {
     return this
   }
 
-  flatMap<A, B>(f: (_: A) => Maybe<B>): Nothing {
+  flatMap<A, B: AnyVal>(f: (_: A) => Maybe<B>): Nothing {
     return this
   }
 
-  map<A, B>(f: (_: A) => B): Nothing {
+  map<A, B: AnyVal>(f: (_: A) => B): Nothing {
     return this
   }
 
@@ -81,8 +83,6 @@ class Nothing {
 function isNil<T>(value: ?T): boolean {
   return value == null
 }
-
-type AnyVal = number | boolean | string | Object
 
 export function just<T>(value: AnyVal): Maybe<T> {
   if (isNil(value)) {
