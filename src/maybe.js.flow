@@ -2,7 +2,7 @@
 
 export type Maybe<A> = Just<A> | Nothing
 
-declare class Just<A>{
+declare class Just<A> {
   value: A;
   constructor(value: mixed /* UNEXPECTED TYPE: EvalT */): any;
   filter(p: (_: A) => boolean): Maybe<A>;
@@ -15,12 +15,12 @@ declare class Just<A>{
 }
 
 declare class Nothing {
-  filter(p: () => boolean): Nothing;
-  flatMap<B>(f: () => Maybe<B>): Nothing;
+  filter<A>(p: (_: A) => boolean): Nothing;
+  flatMap<A, B>(f: (_: A) => Maybe<B>): Nothing;
   isJust(): boolean;
   isNothing(): boolean;
   just(): void;
-  map<B>(f: () => B): Nothing;
+  map<A, B>(f: (_: A) => B): Nothing;
   orJust<B>(value: B): B;
 }
 

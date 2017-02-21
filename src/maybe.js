@@ -48,15 +48,15 @@ class Just<A> {
 
 class Nothing {
 
-  filter(p: Function): Nothing {
+  filter<A>(p: (_: A) => boolean): Nothing {
     return this
   }
 
-  flatMap(f: Function): Nothing {
+  flatMap<A, B>(f: (_: A) => Maybe<B>): Nothing {
     return this
   }
 
-  map(f: Function): Nothing {
+  map<A, B>(f: (_: A) => B): Nothing {
     return this
   }
 
