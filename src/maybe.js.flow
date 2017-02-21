@@ -1,0 +1,31 @@
+// @flow
+
+export type Maybe<A> = Just<A> | Nothing
+
+declare class Just<A>{
+  value: A;
+  constructor(value: mixed /* UNEXPECTED TYPE: EvalT */): any;
+  filter(p: (_: A) => boolean): Maybe<A>;
+  flatMap<B>(f: (_: A) => Maybe<B>): Maybe<B>;
+  isJust(): boolean;
+  isNothing(): boolean;
+  just(): A;
+  map<B>(f: (_: A) => B): Maybe<B>;
+  orJust<B>(value: B): A;
+}
+
+declare class Nothing {
+  filter(p: () => boolean): Nothing;
+  flatMap<B>(f: () => Maybe<B>): Nothing;
+  isJust(): boolean;
+  isNothing(): boolean;
+  just(): void;
+  map<B>(f: () => B): Nothing;
+  orJust<B>(value: B): B;
+}
+
+declare export function just<T>(value: number | boolean | string | Object): Just<T>;
+
+declare export function maybe<T>(value: ?T): Maybe<T>;
+
+declare export var nothing: Nothing;

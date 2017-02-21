@@ -91,7 +91,7 @@ export function just<T>(value: AnyVal): Maybe<T> {
   return new Just(value)
 }
 
-export const nothing = Object.freeze(new Nothing())
+export const nothing: Nothing = Object.freeze(new Nothing())
 
 export function maybe<T>(value: ?T): Maybe<T> {
   return isNil(value) ? nothing : new Just(value)
