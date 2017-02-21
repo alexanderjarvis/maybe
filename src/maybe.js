@@ -3,7 +3,7 @@
  */
 
 export type Maybe<A> = Just<A> | Nothing
-  
+
 type AnyVal = number | boolean | string | Object
 
 class Just<A> {
@@ -24,6 +24,10 @@ class Just<A> {
 
   flatMap<B: AnyVal>(f: (A) => Maybe<B>): Maybe<B> {
     return f(this.value)
+  }
+
+  foreach<B: AnyVal>(f: (A) => B): void {
+    f(this.value)
   }
 
   map<B: AnyVal>(f: (A) => B): Maybe<B> {
@@ -57,6 +61,8 @@ class Nothing {
   flatMap<A, B: AnyVal>(f: (_: A) => Maybe<B>): Nothing {
     return this
   }
+
+  foreach<A, B: AnyVal>(f: (A) => B): void {}
 
   map<A, B: AnyVal>(f: (_: A) => B): Nothing {
     return this

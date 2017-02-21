@@ -105,3 +105,17 @@ test('filter() to return nothing', () => {
     .map(v => v.toUpperCase())
   expect(upper).toBe(nothing)
 })
+
+test('foreach() to side effect with value', () => {
+  let effect
+  const result = maybe('effect').foreach(v => effect = v)
+  expect(effect).toBe('effect')
+  expect(result).toBeUndefined()
+})
+
+test('foreach() to not side effect with empty value', () => {
+  let effect
+  const result = maybe(null).foreach(v => effect = v)
+  expect(effect).toBeUndefined()
+  expect(result).toBeUndefined()
+})

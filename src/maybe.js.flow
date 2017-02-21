@@ -9,6 +9,7 @@ declare class Just<A> {
   constructor(value: mixed /* UNEXPECTED TYPE: EvalT */): any;
   filter(p: (_: A) => boolean): Maybe<A>;
   flatMap<B: AnyVal>(f: (_: A) => Maybe<B>): Maybe<B>;
+  foreach<B: AnyVal>(f: (_: A) => B): void;
   isJust(): boolean;
   isNothing(): boolean;
   just(): A;
@@ -19,6 +20,7 @@ declare class Just<A> {
 declare class Nothing {
   filter<A>(p: (_: A) => boolean): Nothing;
   flatMap<A, B: AnyVal>(f: (_: A) => Maybe<B>): Nothing;
+  foreach<A, B: AnyVal>(f: (_: A) => B): void;
   isJust(): boolean;
   isNothing(): boolean;
   just(): void;
