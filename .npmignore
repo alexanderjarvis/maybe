@@ -1,1 +1,5 @@
+.babelrc
+.flowconfig
+.travis.yml
+flow-typed/
 src/
