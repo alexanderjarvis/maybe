@@ -26,7 +26,7 @@ class Just<A> {
     return f(this.value)
   }
 
-  foreach<B: AnyVal>(f: (A) => B): void {
+  foreach<B>(f: (A) => B): void {
     f(this.value)
   }
 
@@ -62,7 +62,7 @@ class Nothing {
     return this
   }
 
-  foreach<A, B: AnyVal>(f: (A) => B): void {}
+  foreach<A, B>(f: (A) => B): void {}
 
   map<A, B: AnyVal>(f: (_: A) => B): Nothing {
     return this
