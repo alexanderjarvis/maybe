@@ -69,7 +69,7 @@ test('chaining', () => {
 
 test('flatMap', () => {
   const a = maybe('hi')
-  const result = a.flatMap(v => {
+  const result = a.flatMap((v: string): Maybe<string> => {
     if (v === 'hi') {
       return just('world')
     } else {
@@ -92,7 +92,7 @@ test('filter() to return just', () => {
   const name = maybe('alex  ')
   const upper = name
     .map(v => v.trim())
-    .filter(v => v.length != 0)
+    .filter(v => v.length !== 0)
     .map(v => v.toUpperCase())
   expect(upper).toEqual(just('ALEX'))
 })
@@ -101,21 +101,21 @@ test('filter() to return nothing', () => {
   const name = maybe('  ')
   const upper = name
     .map(v => v.trim())
-    .filter(v => v.length != 0)
+    .filter(v => v.length !== 0)
     .map(v => v.toUpperCase())
   expect(upper).toBe(nothing)
 })
 
 test('foreach() to side effect with value', () => {
   let effect
-  const result = maybe('effect').foreach(v => effect = v)
+  const result = maybe('effect').foreach(v => effect = v) // eslint-disable-line no-return-assign
   expect(effect).toBe('effect')
   expect(result).toBeUndefined()
 })
 
 test('foreach() to not side effect with empty value', () => {
   let effect
-  const result = maybe(null).foreach(v => effect = v)
+  const result = maybe(null).foreach(v => effect = v) // eslint-disable-line no-return-assign
   expect(effect).toBeUndefined()
   expect(result).toBeUndefined()
 })

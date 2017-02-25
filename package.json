@@ -20,10 +20,11 @@
   "main": "lib/maybe.js",
   "scripts": {
     "flow": "flow",
-    "lint": "eslint .",
+    "lint": "eslint . --max-warnings 0",
     "test": "jest",
     "compile": "babel src --out-dir lib --ignore src/maybe.test.js && cp src/maybe.js.flow lib",
-    "prepublish": "yarn run compile"
+    "prepublish": "yarn run compile",
+    "check": "yarn run lint && yarn run flow check && yarn test"
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",
@@ -35,6 +36,7 @@
     "babel-preset-env": "^1.1.8",
     "eslint": "^3.15.0",
     "eslint-config-airbnb-base": "^11.1.0",
+    "eslint-plugin-flowtype": "^2.30.0",
     "eslint-plugin-import": "^2.2.0",
     "flow-bin": "^0.39.0",
     "jest": "^18.1.0"

@@ -26,7 +26,7 @@ class Just<A> {
     return f(this.value)
   }
 
-  foreach<B>(f: (A) => B): void {
+  foreach<B>(f: (A) => B) {
     f(this.value)
   }
 
@@ -46,7 +46,7 @@ class Just<A> {
     return this.value
   }
 
-  orJust<B>(value: B): A {
+  orJust(): A {
     return this.value
   }
 
@@ -54,17 +54,17 @@ class Just<A> {
 
 class Nothing {
 
-  filter<A>(p: (_: A) => boolean): Nothing {
+  filter(): Nothing {
     return this
   }
 
-  flatMap<A, B: AnyVal>(f: (_: A) => Maybe<B>): Nothing {
+  flatMap(): Nothing {
     return this
   }
 
-  foreach<A, B>(f: (A) => B): void {}
+  foreach() {}
 
-  map<A, B: AnyVal>(f: (_: A) => B): Nothing {
+  map(): Nothing {
     return this
   }
 
