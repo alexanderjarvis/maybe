@@ -2,6 +2,14 @@ language: node_js
 node_js:
 - '6'
 - '7'
+cache: yarn
+install:
+- yarn install --pure-lockfile
+- yarn check --integrity
+script:
+- yarn run lint
+- yarn run flow check
+- yarn test
 deploy:
   provider: npm
   email: alex@panaxiom.co.uk
