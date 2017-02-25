@@ -35,6 +35,7 @@
     "babel-preset-env": "^1.1.8",
     "eslint": "^3.15.0",
     "eslint-config-airbnb-base": "^11.1.0",
+    "eslint-plugin-flowtype": "^2.30.0",
     "eslint-plugin-import": "^2.2.0",
     "flow-bin": "^0.39.0",
     "jest": "^18.1.0"
