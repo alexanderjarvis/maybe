@@ -5,8 +5,6 @@ export type Maybe<A> = Just<A> | Nothing
 type AnyVal = number | boolean | string | Object
 
 declare class Just<A> {
-  value: A;
-  constructor(value: mixed /* UNEXPECTED TYPE: EvalT */): any;
   filter(p: (_: A) => boolean): Maybe<A>;
   flatMap<B: AnyVal>(f: (_: A) => Maybe<B>): Maybe<B>;
   foreach<B>(f: (_: A) => B): void;
