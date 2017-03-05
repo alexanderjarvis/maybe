@@ -91,7 +91,7 @@ function isNil<T>(value: ?T): boolean {
   return value == null
 }
 
-export function just<T>(value: AnyVal): Maybe<T> {
+export function just<T>(value: AnyVal): Just<T> {
   if (isNil(value)) {
     throw Error('Cannot create Just with an empty value: use flowtype!')
   }
