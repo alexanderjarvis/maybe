@@ -23,7 +23,8 @@ class Just<A> {
   }
 
   flatMap<B: AnyVal>(f: (A) => Maybe<B>): Maybe<B> {
-    return f(this.value)
+    const result = f(this.value)
+    return isNil(result) ? nothing : result
   }
 
   foreach<B>(f: (A) => B) {

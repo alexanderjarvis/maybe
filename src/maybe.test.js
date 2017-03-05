@@ -79,6 +79,12 @@ test('flatMap', () => {
   expect(result).toEqual(just('world'))
 })
 
+test('flatMap to check and convert nil', () => {
+  // $FlowIgnore
+  const result = maybe(1).flatMap(() => null)
+  expect(result).toEqual(nothing)
+})
+
 test('just() throws on empty values', () => {
   // $FlowIgnore
   const fNull = () => just(null)
