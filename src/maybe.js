@@ -23,7 +23,8 @@ class Just<A> {
   }
 
   flatMap<B: AnyVal>(f: (A) => Maybe<B>): Maybe<B> {
-    return f(this.value)
+    const result = f(this.value)
+    return isNil(result) ? nothing : result
   }
 
   foreach<B>(f: (A) => B) {
@@ -90,7 +91,7 @@ function isNil<T>(value: ?T): boolean {
   return value == null
 }
 
-export function just<T>(value: AnyVal): Maybe<T> {
+export function just<T>(value: AnyVal): Just<T> {
   if (isNil(value)) {
     throw Error('Cannot create Just with an empty value: use flowtype!')
   }
