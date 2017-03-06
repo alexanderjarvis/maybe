@@ -80,16 +80,16 @@ test('flatMap', () => {
 })
 
 test('flatMap to check and convert nil', () => {
-  // $FlowIgnore
+  // $FlowExpectedError
   const result = maybe(1).flatMap(() => null)
   expect(result).toEqual(nothing)
 })
 
 test('just() throws on empty values', () => {
-  // $FlowIgnore
+  // $FlowExpectedError
   const fNull = () => just(null)
   expect(fNull).toThrow()
-  // $FlowIgnore
+  // $FlowExpectedError
   const fUndefined = () => just(undefined)
   expect(fUndefined).toThrow()
 })
