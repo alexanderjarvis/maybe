@@ -112,16 +112,16 @@ test('filter() to return nothing', () => {
   expect(upper).toBe(nothing)
 })
 
-test('foreach() to side effect with value', () => {
+test('forEach() to side effect with value', () => {
   let effect
-  const result = maybe('effect').foreach(v => effect = v) // eslint-disable-line no-return-assign
+  const result = maybe('effect').forEach(v => effect = v) // eslint-disable-line no-return-assign
   expect(effect).toBe('effect')
   expect(result).toBeUndefined()
 })
 
-test('foreach() to not side effect with empty value', () => {
+test('forEach() to not side effect with empty value', () => {
   let effect
-  const result = maybe(null).foreach(v => effect = v) // eslint-disable-line no-return-assign
+  const result = maybe(null).forEach(v => effect = v) // eslint-disable-line no-return-assign
   expect(effect).toBeUndefined()
   expect(result).toBeUndefined()
 })

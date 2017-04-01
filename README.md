@@ -118,12 +118,12 @@ const upper = name
   .map(v => v.toUpperCase())
 ```
 
-Use `foreach` when you would otherwise use `map` but can't or don't want to return a value. This
-is usually when you are causing a side effect. `foreach` returns `void` and so enforces it's the
+Use `forEach` when you would otherwise use `map` but can't or don't want to return a value. This
+is usually when you are causing a side effect. `forEach` returns `void` and so enforces it's the
 last in a chain. It runs only if there is a non empty value.
 
 ```js
-maybe('effect').foreach(s => console.log(s))
+maybe('effect').forEach(s => console.log(s))
 ```
 
 ## Types

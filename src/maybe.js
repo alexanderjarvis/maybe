@@ -27,7 +27,7 @@ class Just<A> {
     return isNil(result) ? nothing : result
   }
 
-  foreach<B>(f: (A) => B) {
+  forEach<B>(f: (A) => B) {
     f(this.value)
   }
 
@@ -63,7 +63,7 @@ class Nothing {
     return this
   }
 
-  foreach() {}
+  forEach() {}
 
   map(): Nothing {
     return this

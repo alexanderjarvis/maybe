@@ -7,7 +7,7 @@ type AnyVal = number | boolean | string | Object
 declare class Just<A> {
   filter(p: (_: A) => boolean): Maybe<A>;
   flatMap<B: AnyVal>(f: (_: A) => Maybe<B>): Maybe<B>;
-  foreach<B>(f: (_: A) => B): void;
+  forEach<B>(f: (_: A) => B): void;
   isJust(): boolean;
   isNothing(): boolean;
   just(): A;
@@ -18,7 +18,7 @@ declare class Just<A> {
 declare class Nothing {
   filter<A>(p: (_: A) => boolean): Nothing;
   flatMap<A, B: AnyVal>(f: (_: A) => Maybe<B>): Nothing;
-  foreach<A, B>(f: (_: A) => B): void;
+  forEach<A, B>(f: (_: A) => B): void;
   isJust(): boolean;
   isNothing(): boolean;
   just(): void;
