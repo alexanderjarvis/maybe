@@ -2,7 +2,7 @@
 
 export type Maybe<A> = Just<A> | Nothing
 
-type AnyVal = number | boolean | string | Object
+type AnyVal = number | boolean | string | Object | Array<*>
 
 declare class Just<A> {
   filter(p: (_: A) => boolean): Maybe<A>;
