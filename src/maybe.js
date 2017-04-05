@@ -4,7 +4,7 @@
 
 export type Maybe<A> = Just<A> | Nothing
 
-type AnyVal = number | boolean | string | Object
+type AnyVal = number | boolean | string | Object | Array<*>
 
 class Just<A> {
 
