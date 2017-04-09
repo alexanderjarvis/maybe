@@ -81,6 +81,14 @@ Use `orJust()` to provide a default value.
 empty.map(v => v.toUpperCase()).orJust('hello') // 'hello'
 ```
 
+Use `orElse()` to provide a default already wrapped in a Maybe. This can be useful if you want to combine
+two or more Maybe's together.
+
+```js
+const hello = maybe('hello')
+empty.map(v => v.toUpperCase()).orElse(hello) // Maybe('hello')
+```
+
 Chain operations together using `map`:
 
 ```js
