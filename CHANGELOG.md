@@ -5,6 +5,16 @@
 ### Fixes
 ### Other
 
+# v0.2.2
+
+### Features
+* Add orElse
+
+# v0.2.1
+
+### Fixes
+* Append AnyVal to handle arrays
+
 # v0.2.0
 
 ### Fixes
