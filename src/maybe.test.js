@@ -125,3 +125,10 @@ test('forEach() to not side effect with empty value', () => {
   expect(effect).toBeUndefined()
   expect(result).toBeUndefined()
 })
+
+test('orElse', () => {
+  const x = maybe(null)
+  expect(x.orElse(maybe('hi'))).toEqual(just('hi'))
+  const y = maybe('hello')
+  expect(y.orElse(maybe('world'))).toEqual(just('hello'))
+})

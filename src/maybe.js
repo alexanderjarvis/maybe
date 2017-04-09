@@ -31,10 +31,6 @@ class Just<A> {
     f(this.value)
   }
 
-  map<B: AnyVal>(f: (A) => B): Maybe<B> {
-    return new Just(f(this.value))
-  }
-
   isJust(): boolean {
     return true
   }
@@ -45,6 +41,14 @@ class Just<A> {
 
   just(): A {
     return this.value
+  }
+
+  map<B: AnyVal>(f: (A) => B): Maybe<B> {
+    return new Just(f(this.value))
+  }
+
+  orElse(): Maybe<A> {
+    return this
   }
 
   orJust(): A {
@@ -65,10 +69,6 @@ class Nothing {
 
   forEach() {}
 
-  map(): Nothing {
-    return this
-  }
-
   isJust(): boolean {
     return false
   }
@@ -79,6 +79,14 @@ class Nothing {
 
   just() {
     throw Error('Cannot call just() on a Nothing')
+  }
+
+  map(): Nothing {
+    return this
+  }
+
+  orElse<B>(m: Maybe<B>): Maybe<B> {
+    return m
   }
 
   orJust<B>(value: B): B {
