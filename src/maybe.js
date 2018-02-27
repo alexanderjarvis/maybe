@@ -4,7 +4,7 @@
 
 export type Maybe<A> = Just<A> | Nothing
 
-type AnyVal = number | boolean | string | Object | Array<*>
+type AnyVal = number | boolean | string | Object | Array<*> | $ReadOnlyArray<*>
 
 class Just<A> {
 
