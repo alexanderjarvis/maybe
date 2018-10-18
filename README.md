@@ -198,4 +198,4 @@ object.flatMap(o => o.value.map(v => v.toUpperCase())).orJust('')
 
 ## License
 
-Maybe is available under the MIT license. See [LICENCE](./LICENSE).
+Maybe is available under the MIT license. See [LICENSE](./LICENSE).
